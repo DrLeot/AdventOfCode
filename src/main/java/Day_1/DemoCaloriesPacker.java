@@ -33,7 +33,12 @@ public class DemoCaloriesPacker {
                 System.out.println(ioex);
             }
 
-            System.out.println(Collections.max(elves).getSumBackpack());
+
+            for(int i = 0; i<3;i++){
+                Elve max = Collections.max(elves);
+                System.out.println("Place nr "+(i+1)+" : "+max.getSumBackpack());
+                elves.remove(max);
+            }
 
         }
 
