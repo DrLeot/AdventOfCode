@@ -1,6 +1,9 @@
 package Day_3;
+import Util.FileReader;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class DemoBackPack {
 
@@ -11,28 +14,30 @@ public class DemoBackPack {
         int sumGroup = 0;
         int counter = 0;
         BackPack[] backBackGroup = new BackPack[3];
-        if(new File(path).exists()) {
-            try (BufferedReader br = new BufferedReader(
-                    new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8))) {
+        Util.FileReader fileReader = new FileReader(path);
+        ArrayList<String> lines = new ArrayList<>();
 
-                String line;
+        try {
+            lines = fileReader.readAllLines();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (String line:lines){
+            try {
+                backBackGroup[counter] = new BackPack(line);
+                sum += BackPack.getPriorityItemValue(backBackGroup[counter].getPriorityItem());
+                counter++;
 
-                while ((line = br.readLine()) != null) {
-                    backBackGroup[counter] = new BackPack(line);
-                    sum += BackPack.getPriorityItemValue(backBackGroup[counter].getPriorityItem());
-                    counter++;
-
-                    if(counter > 2){
-                        sumGroup += BackPack.getPriorityItemValue(BackPack.getCommonCharacter(backBackGroup[0], backBackGroup[1], backBackGroup[2]));
-                        counter = 0;
-                    }
+                if(counter > 2){
+                    sumGroup += BackPack.getPriorityItemValue(BackPack.getCommonCharacter(backBackGroup[0], backBackGroup[1], backBackGroup[2]));
+                    counter = 0;
                 }
-
-            } catch (Exception ioex) {
-                System.out.println(ioex.getMessage());
+            }catch (Exception ex){
+                System.out.println(ex);
             }
         }
         System.out.println(sum);
         System.out.println(sumGroup);
+
     }
 }

@@ -1,6 +1,7 @@
 package Day_1;
 
 import Util.Elve;
+import Util.FileReader;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -14,36 +15,31 @@ public class DemoCaloriesPacker {
     public static void main(String[] args){
 
         ArrayList<Elve> elves = new ArrayList<>();
-
+        FileReader fileReader = new FileReader(path);
+        ArrayList<String> lines = new ArrayList<>();
+        ArrayList<Integer> calories = new ArrayList<>();
         // read file
-        if(new File(path).exists()){
-            try(BufferedReader br = new BufferedReader(
-                    new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8))) {
-
-                String line;
-                ArrayList<Integer> calories = new ArrayList<>();
-                while ((line = br.readLine()) != null) {
-                    if(line.equals("")){ // change elve
-                        elves.add(new Elve(calories,0,0));
-                        calories = new ArrayList<>();
-                        continue;
-                    }
-                    calories.add(Integer.parseInt(line));
-                }
-
-            }catch (IOException ioex){
-                System.out.println(ioex);
+        try {
+            lines = fileReader.readAllLines();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (String line:lines) {
+            if(line.equals("")){ // change elve
+                elves.add(new Elve(calories,0,0));
+                calories = new ArrayList<>();
+                continue;
             }
+            calories.add(Integer.parseInt(line));
+        }
 
-
-            for(int i = 0; i<3;i++){
-                Elve max = Collections.max(elves);
-                System.out.println("Place nr "+(i+1)+" : "+max.getSumBackpack());
-                elves.remove(max);
-            }
+        for(int i = 0; i<3;i++){
+            Elve max = Collections.max(elves);
+            System.out.println("Place nr "+(i+1)+" : "+max.getSumBackpack());
+            elves.remove(max);
+        }
 
         }
 
     }
 
-}
