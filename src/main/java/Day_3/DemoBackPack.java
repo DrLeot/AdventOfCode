@@ -1,7 +1,4 @@
 package Day_3;
-
-import Day_2.Battle;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 

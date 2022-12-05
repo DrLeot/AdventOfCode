@@ -1,5 +1,7 @@
 package Day_1;
 
+import Util.Elve;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -22,7 +24,7 @@ public class DemoCaloriesPacker {
                 ArrayList<Integer> calories = new ArrayList<>();
                 while ((line = br.readLine()) != null) {
                     if(line.equals("")){ // change elve
-                        elves.add(new Elve(calories));
+                        elves.add(new Elve(calories,0,0));
                         calories = new ArrayList<>();
                         continue;
                     }

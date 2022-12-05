@@ -1,7 +1,5 @@
 package Day_2;
 
-import Day_1.Elve;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
