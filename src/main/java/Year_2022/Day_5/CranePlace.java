@@ -1,4 +1,4 @@
-package Day_5;
+package Year_2022.Day_5;
 
 import java.util.ArrayList;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package Day_6;
+package Year_2022.Day_6;
 
 public class CharStream {
 

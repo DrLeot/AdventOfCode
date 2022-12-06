@@ -1,6 +1,6 @@
-package Day_6;
+package Year_2022.Day_6;
 
-import Util.FileReader;
+import Year_2022.Util.FileReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class DemoTuningTrouble {
     public static final int BUFFERLENGTH2 = 14;
 
     public static void main(String[] args){
-        Util.FileReader fileReader = new FileReader(path);
+        FileReader fileReader = new FileReader(path);
         ArrayList<String> lines = new ArrayList<>();
 
         try {

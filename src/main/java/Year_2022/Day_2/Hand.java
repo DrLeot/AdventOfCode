@@ -1,4 +1,4 @@
-package Day_2;
+package Year_2022.Day_2;
 
 public enum Hand {
 

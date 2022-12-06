@@ -1,9 +1,8 @@
-package Day_2;
+package Year_2022.Day_2;
 
-import Util.FileReader;
+import Year_2022.Util.FileReader;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class DemoPaperRockScissors {
@@ -13,7 +12,7 @@ public class DemoPaperRockScissors {
     public static void main(String[] args){
         int sum_lowmode = 0;
         int sum_promode = 0;
-        Util.FileReader fileReader = new FileReader(path);
+        Year_2022.Util.FileReader fileReader = new FileReader(path);
         ArrayList<String> lines = new ArrayList<>();
 
         try {

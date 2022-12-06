@@ -1,10 +1,9 @@
-package Day_1;
+package Year_2022.Day_1;
 
-import Util.Elve;
-import Util.FileReader;
+import Year_2022.Util.Elve;
+import Year_2022.Util.FileReader;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -15,7 +14,7 @@ public class DemoCaloriesPacker {
     public static void main(String[] args){
 
         ArrayList<Elve> elves = new ArrayList<>();
-        FileReader fileReader = new FileReader(path);
+        Year_2022.Util.FileReader fileReader = new FileReader(path);
         ArrayList<String> lines = new ArrayList<>();
         ArrayList<Integer> calories = new ArrayList<>();
         // read file

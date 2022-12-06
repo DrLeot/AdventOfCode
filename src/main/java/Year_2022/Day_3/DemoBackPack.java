@@ -1,8 +1,7 @@
-package Day_3;
-import Util.FileReader;
+package Year_2022.Day_3;
+import Year_2022.Util.FileReader;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class DemoBackPack {
@@ -14,7 +13,7 @@ public class DemoBackPack {
         int sumGroup = 0;
         int counter = 0;
         BackPack[] backBackGroup = new BackPack[3];
-        Util.FileReader fileReader = new FileReader(path);
+        FileReader fileReader = new FileReader(path);
         ArrayList<String> lines = new ArrayList<>();
 
         try {

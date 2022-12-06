@@ -1,5 +1,6 @@
 package Day_3;
 
+import Year_2022.Day_3.BackPack;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

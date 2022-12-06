@@ -1,5 +1,6 @@
 package Day_6;
 
+import Year_2022.Day_6.CharStream;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

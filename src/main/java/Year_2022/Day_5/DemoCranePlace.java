@@ -1,10 +1,8 @@
-package Day_5;
+package Year_2022.Day_5;
 
-import Day_2.Battle;
-import Util.FileReader;
+import Year_2022.Util.FileReader;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class DemoCranePlace {
@@ -23,7 +21,7 @@ public class DemoCranePlace {
     public static void main(String[] args){
         CranePlace cranePlace = new CranePlace(craneSetup, 9);
         CranePlace cranePlace2 = new CranePlace(craneSetup, 9);
-        Util.FileReader fileReader = new FileReader(path);
+        Year_2022.Util.FileReader fileReader = new FileReader(path);
         ArrayList<String> lines = new ArrayList<>();
 
         try {

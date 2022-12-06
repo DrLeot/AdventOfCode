@@ -1,10 +1,9 @@
-package Day_4;
+package Year_2022.Day_4;
 
-import Util.Elve;
-import Util.FileReader;
+import Year_2022.Util.Elve;
+import Year_2022.Util.FileReader;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public final class DemoCampCleanup {
@@ -14,7 +13,7 @@ public final class DemoCampCleanup {
     public static void main(String[] args) {
         int counter = 0;
         int counter2 = 0;
-        Util.FileReader fileReader = new FileReader(path);
+        FileReader fileReader = new FileReader(path);
         ArrayList<String> lines = new ArrayList<>();
 
         try {
