@@ -11,7 +11,7 @@ class CharStreamTest {
     public void testHasDuplicates(){
         assertFalse(CharStream.hasDuplicates("abc".toCharArray()));
         assertFalse(CharStream.hasDuplicates("".toCharArray()));
-        assertFalse(CharStream.hasDuplicates(" abc ".toCharArray()));
+        assertFalse(CharStream.hasDuplicates(" abc ".toCharArray())); // whitespace are ignored
 
         assertTrue(CharStream.hasDuplicates("aabbdeh".toCharArray()));
         assertTrue(CharStream.hasDuplicates("fgjzf".toCharArray()));
