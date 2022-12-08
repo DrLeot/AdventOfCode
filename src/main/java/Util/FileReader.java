@@ -1,4 +1,4 @@
-package Year_2022.Util;
+package Util;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
