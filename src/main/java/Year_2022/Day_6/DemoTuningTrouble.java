@@ -1,6 +1,6 @@
 package Year_2022.Day_6;
 
-import Year_2022.Util.FileReader;
+import Util.FileReader;
 
 import java.io.IOException;
 import java.util.ArrayList;

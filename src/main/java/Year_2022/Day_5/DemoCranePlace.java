@@ -1,6 +1,6 @@
 package Year_2022.Day_5;
 
-import Year_2022.Util.FileReader;
+import Util.FileReader;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class DemoCranePlace {
     public static void main(String[] args){
         CranePlace cranePlace = new CranePlace(craneSetup, 9);
         CranePlace cranePlace2 = new CranePlace(craneSetup, 9);
-        Year_2022.Util.FileReader fileReader = new FileReader(path);
+        FileReader fileReader = new FileReader(path);
         ArrayList<String> lines = new ArrayList<>();
 
         try {

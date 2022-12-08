@@ -1,7 +1,7 @@
 package Year_2022.Day_4;
 
 import Year_2022.Util.Elve;
-import Year_2022.Util.FileReader;
+import Util.FileReader;
 
 import java.io.*;
 import java.util.ArrayList;
