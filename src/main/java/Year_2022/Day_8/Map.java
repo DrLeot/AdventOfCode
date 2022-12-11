@@ -19,16 +19,63 @@ public class Map {
         }
     }
 
+    public int getViewScore(final int x, final int y){
+        int product = 1;
 
-    void add(int width, int height, int size){
-        trees[width][height] = size;
+        if (x <= 0 || x >= trees.length || y <= 0 || y >= trees[0].length){ // edge
+            return 0; // 0 times something always ends zero on the edge
+        }
+
+        // down
+        int down = 0;
+        for (int a = x+1; a < trees[x].length;a++){
+            if (trees[a][y] >= trees[x][y]){
+                down++;
+                break;
+            }
+            down++;
+        }
+        product *= down;
+
+        // up
+        int up = 0;
+        for (int a = x-1; a >= 0;a--){
+            if (trees[a][y] >= trees[x][y]){
+                up++;
+                break;
+            }
+            up++;
+        }
+        product *= up;
+
+        // left
+        int left = 0;
+        for (int a = y-1; a >= 0;a--){
+            if (trees[x][a] >= trees[x][y]){
+                left++;
+                break;
+            }
+            left++;
+        }
+        product *= left;
+
+        // right
+        int right = 0;
+        for (int a = y+1; a < trees.length;a++){
+            if (trees[x][a] >= trees[x][y]){
+                right++;
+                break;
+            }
+            right++;
+        }
+        product *= right;
+
+        return product;
     }
 
     public boolean isTreeVisible(final int x, final int y){
         boolean none = true;
-        if (x == 1 && y == 3){
-            System.out.println("");
-        }
+
         if (x <= 0 || x >= trees.length || y <= 0 || y >= trees[0].length){ // edge
             return true;
         }
@@ -96,4 +143,16 @@ public class Map {
         return sum;
     }
 
+    public int getHighestViewScore(){
+        int ret = 0;
+        for (int a = 0; a < trees.length; a++) {
+            for (int b = 0; b < trees[a].length; b++) {
+                int temp = getViewScore(a,b);
+                if (temp > ret){
+                    ret = temp;
+                }
+            }
+        }
+        return ret;
+    }
 }

@@ -20,5 +20,6 @@ public class DemoMap {
 
         Map map = new Map(lines.size(),lines.get(0).length(), lines);
         System.out.println(map.countVisible());
+        System.out.println(map.getHighestViewScore());
     }
 }
