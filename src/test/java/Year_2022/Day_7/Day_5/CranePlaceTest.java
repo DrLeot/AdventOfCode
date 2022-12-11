@@ -1,4 +1,4 @@
-package Day_5;
+package Year_2022.Day_7.Day_5;
 
 import Year_2022.Day_5.CranePlace;
 import org.junit.jupiter.api.Test;

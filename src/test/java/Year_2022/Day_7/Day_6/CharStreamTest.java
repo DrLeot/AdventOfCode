@@ -1,4 +1,4 @@
-package Day_6;
+package Year_2022.Day_7.Day_6;
 
 import Year_2022.Day_6.CharStream;
 import org.junit.jupiter.api.Test;

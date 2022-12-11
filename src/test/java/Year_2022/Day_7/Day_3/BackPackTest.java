@@ -1,4 +1,4 @@
-package Day_3;
+package Year_2022.Day_7.Day_3;
 
 import Year_2022.Day_3.BackPack;
 import org.junit.jupiter.api.Test;
