@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public final class DemoCampCleanup extends AbstractStarter {
 
     public DemoCampCleanup(){
-        super("2022", "3", "Camp Cleanup","src/main/resources/2022/D3Q1.txt");
+        super("2022", "4", "Camp Cleanup","src/main/resources/2022/D3Q1.txt");
     }
 
     @Override

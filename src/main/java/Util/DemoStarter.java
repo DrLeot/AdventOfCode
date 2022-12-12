@@ -2,6 +2,7 @@ package Util;
 
 import Year_2015.Day_1.DemoFloor;
 import Year_2015.Day_2.DemoPackageWrapper;
+import Year_2022.Day_1.DemoCaloriesPacker;
 import Year_2022.Day_10.SmallALUDemo;
 import Year_2022.Day_2.DemoPaperRockScissors;
 import Year_2022.Day_3.DemoBackPack;
@@ -12,20 +13,21 @@ import Year_2022.Day_7.DemoConsole;
 import Year_2022.Day_8.DemoMap;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 import java.time.Year;
 
 public class DemoStarter {
 
-    public static ArrayList<AbstractStarter> starters = new ArrayList<>();
+    public static HashSet<AbstractStarter> starters = new HashSet<>();
 
 
     public static void main(String[] args){
         starters.add(new DemoFloor());
+        starters.add(new DemoCaloriesPacker());
         starters.add(new DemoPackageWrapper());
         starters.add(new DemoPaperRockScissors());
         starters.add(new DemoBackPack());
-        starters.add(new DemoCampCleanup());
         starters.add(new DemoCampCleanup());
         starters.add(new DemoTuningTrouble());
         starters.add(new DemoConsole());
