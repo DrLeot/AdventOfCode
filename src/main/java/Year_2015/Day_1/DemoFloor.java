@@ -1,16 +1,21 @@
-package Year_2016.Day_1;
+package Year_2015.Day_1;
 
+import Util.AbstractStarter;
 import Util.FileReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DemoFloor {
-    public static final String PATH = "src/main/resources/2016/D1Q1.txt";
+public class DemoFloor extends AbstractStarter {
 
-    public static void main(String[] args) {
+    public DemoFloor() {
+        super("2015", "1", "Not Quite Lisp","src/main/resources/2015/D1Q1.txt");
+    }
+
+    @Override
+    public void run() {
         int floorNumber = 0;
-        FileReader fileReader = new FileReader(PATH);
+        FileReader fileReader = new FileReader(getInput());
         ArrayList<String> lines = new ArrayList<>();
 
         try {

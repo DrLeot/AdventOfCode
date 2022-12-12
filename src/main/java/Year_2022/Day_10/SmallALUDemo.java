@@ -1,16 +1,21 @@
 package Year_2022.Day_10;
 
+import Util.AbstractStarter;
 import Util.FileReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SmallALUDemo {
-    public static final String path = "src/main/resources/D10Q1.txt";
-    public static final int[] outputCycles = new int[]{20,60,100,140,180,220};
+public class SmallALUDemo extends AbstractStarter {
 
-    public static void main(String[] args){
-        FileReader fileReader = new FileReader(path);
+    public SmallALUDemo(){
+        super("2022", "10", "Cathode-Ray Tube","src/main/resources/2022/D10Q1.txt");
+    }
+
+    @Override
+    public void run() {
+        final int[] outputCycles = new int[]{20,60,100,140,180,220};
+        FileReader fileReader = new FileReader(getInput());
         ArrayList<String> lines = new ArrayList<>();
 
         try {
@@ -29,4 +34,5 @@ public class SmallALUDemo {
         System.out.println("sum: "+ sum);
         System.out.println(smallALU.toString());
     }
+
 }

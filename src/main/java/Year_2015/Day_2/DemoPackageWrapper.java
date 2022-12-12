@@ -1,16 +1,22 @@
-package Year_2016.Day_2;
+package Year_2015.Day_2;
 
+import Util.AbstractStarter;
+import Util.DemoStarter;
 import Util.FileReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DemoPackageWrapper {
+public class DemoPackageWrapper extends AbstractStarter {
 
-    public static final String PATH = "src/main/resources/2016/D2Q1.txt";
 
-    public static void main(String[] args){
-        FileReader fileReader = new FileReader(PATH);
+    public DemoPackageWrapper(){
+        super("2015", "2", "I Was Told There Would Be No Math","src/main/resources/2015/D2Q1.txt");
+    }
+
+    @Override
+    public void run() {
+        FileReader fileReader = new FileReader(getInput());
         ArrayList<String> lines = new ArrayList<>();
         long sum = 0;
         long sumRibbon = 0;

@@ -1,5 +1,6 @@
 package Year_2022.Day_1;
 
+import Util.AbstractStarter;
 import Year_2022.Util.Elve;
 import Util.FileReader;
 
@@ -7,14 +8,16 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DemoCaloriesPacker {
+public class DemoCaloriesPacker extends AbstractStarter {
 
-    public static String path = "src/main/resources/D1Q1.txt";
+    public DemoCaloriesPacker(){
+        super("2022", "1", "Calorie Counting","src/main/resources/2022/D1Q1.txt");
+    }
 
-    public static void main(String[] args){
-
+    @Override
+    public void run() {
         ArrayList<Elve> elves = new ArrayList<>();
-        FileReader fileReader = new FileReader(path);
+        FileReader fileReader = new FileReader(getInput());
         ArrayList<String> lines = new ArrayList<>();
         ArrayList<Integer> calories = new ArrayList<>();
         // read file
@@ -37,8 +40,6 @@ public class DemoCaloriesPacker {
             System.out.println("Place nr "+(i+1)+" : "+max.getSumBackpack());
             elves.remove(max);
         }
-
-        }
-
     }
+}
 

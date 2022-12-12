@@ -1,19 +1,23 @@
 package Year_2022.Day_4;
 
+import Util.AbstractStarter;
 import Year_2022.Util.Elve;
 import Util.FileReader;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public final class DemoCampCleanup {
+public final class DemoCampCleanup extends AbstractStarter {
 
-    public static String path = "src/main/resources/D4Q1.txt";
+    public DemoCampCleanup(){
+        super("2022", "3", "Camp Cleanup","src/main/resources/2022/D3Q1.txt");
+    }
 
-    public static void main(String[] args) {
+    @Override
+    public void run() {
         int counter = 0;
         int counter2 = 0;
-        FileReader fileReader = new FileReader(path);
+        FileReader fileReader = new FileReader(getInput());
         ArrayList<String> lines = new ArrayList<>();
 
         try {

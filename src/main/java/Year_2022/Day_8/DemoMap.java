@@ -1,15 +1,20 @@
 package Year_2022.Day_8;
 
+import Util.AbstractStarter;
 import Util.FileReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DemoMap {
-    public static final String path = "src/main/resources/D8Q1.txt";
+public class DemoMap extends AbstractStarter {
 
-    public static void main(String[] args){
-        FileReader fileReader = new FileReader(path);
+    public DemoMap(){
+        super("2022", "8", "Treetop Tree House","src/main/resources/2022/D8Q1.txt");
+    }
+
+    @Override
+    public void run() {
+        FileReader fileReader = new FileReader(getInput());
         ArrayList<String> lines = new ArrayList<>();
 
         try {
@@ -22,4 +27,5 @@ public class DemoMap {
         System.out.println(map.countVisible());
         System.out.println(map.getHighestViewScore());
     }
+
 }

@@ -3,7 +3,6 @@ package Util;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
 public class FileReader {
 
@@ -28,7 +27,7 @@ public class FileReader {
                 throw new IOException(ioex);
             }
         }else{
-            throw new IOException("File not found!");
+            throw new IOException("File not found at location "+ path);
         }
         return lines;
     }
