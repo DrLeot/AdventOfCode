@@ -18,14 +18,15 @@ public class SmallALUDemo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SmallALU smallALU = new SmallALU();
+        SmallALU smallALU = new SmallALU(6,40);
         smallALU.operation(lines.toArray(String[]::new));
 
         int sum = 0;
-        for(int i = 0; i < outputCycles.length; i++){
-            sum += (outputCycles[i] * smallALU.getXByCycleNumber(outputCycles[i]));
-            System.out.println(outputCycles[i] * smallALU.getXByCycleNumber(outputCycles[i]));
+        for (int outputCycle : outputCycles) {
+            sum += (outputCycle * smallALU.getXByCycleNumber(outputCycle));
+            System.out.println(outputCycle * smallALU.getXByCycleNumber(outputCycle));
         }
         System.out.println("sum: "+ sum);
+        System.out.println(smallALU.toString());
     }
 }

@@ -48,6 +48,7 @@ class SmallALUTest {
 
     @Test
     public void testExample(){
+        smallALU = new SmallALU(6,40);
         String input = "" +
                 "addx 15\n" +
                 "addx -11\n" +
@@ -196,11 +197,19 @@ class SmallALUTest {
                 "noop\n" +
                 "noop\n";
         smallALU.operation(input.split("\n"));
+        System.out.println(smallALU.toString());
         assertEquals(21,smallALU.getXByCycleNumber(20));
         assertEquals(19,smallALU.getXByCycleNumber(60));
         assertEquals(18,smallALU.getXByCycleNumber(100));
         assertEquals(21,smallALU.getXByCycleNumber(140));
         assertEquals(16,smallALU.getXByCycleNumber(180));
         assertEquals(18,smallALU.getXByCycleNumber(220));
+        assertEquals("" +
+                "##..##..##..##..##..##..##..##..##..##..\n" +
+                "###...###...###...###...###...###...###.\n" +
+                "####....####....####....####....####....\n" +
+                "#####.....#####.....#####.....#####.....\n" +
+                "######......######......######......###.\n" +
+                "#######.......#######.......#######.....\n",smallALU.toString());
     }
 }
