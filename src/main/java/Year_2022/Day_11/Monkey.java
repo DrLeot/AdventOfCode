@@ -9,12 +9,14 @@ public abstract class Monkey {
     private final int returnNegative;
     private final int divisor;
     private int inHands;
+    private int numberOfItemsProcessed;
 
     public Monkey(ArrayList<Integer> startingItems, int divisor, int returnPositive, int returnNegative){
         this.startingItems = startingItems;
         this.returnNegative = returnNegative;
         this.returnPositive = returnPositive;
         this.divisor = divisor;
+        this.numberOfItemsProcessed = 0;
     }
 
     public void addItem(int item){
@@ -33,7 +35,8 @@ public abstract class Monkey {
 
         this.inHands = startingItems.remove(0);
         this.inHands = operation(this.inHands);
-        this.inHands = Math.round((float) this.inHands / 3);
+        //this.inHands = (int) Math.floor((double)this.inHands / 3);
+        this.numberOfItemsProcessed++;
     }
 
     public abstract int operation(int currentItem);
@@ -45,7 +48,16 @@ public abstract class Monkey {
         }
     };
 
+    public boolean hasItems(){
+        return startingItems.size() > 0;
+    }
+
     public int getDivisor() {
         return divisor;
+    }
+
+    @Override
+    public String toString() {
+        return startingItems.toString()+" "+numberOfItemsProcessed;
     }
 }

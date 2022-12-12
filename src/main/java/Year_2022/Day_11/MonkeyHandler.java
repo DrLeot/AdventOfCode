@@ -4,18 +4,44 @@ import java.util.ArrayList;
 
 public class MonkeyHandler {
 
-    ArrayList<Monkey> monkeys = new ArrayList<Monkey>();
+    ArrayList<Monkey> monkeys = new ArrayList<>();
 
     public MonkeyHandler(){
-        ArrayList<Integer> items = new ArrayList<>();
-        items.add(79);
-        items.add(98);
-        monkeys.add(new MultiplierMonkey(items,23,19, 2 ,3));
 
-        for(Monkey monkey:monkeys){
-            monkey.doStep();
-            int throwto = monkey.test();
-            monkeys.get(throwto).addItem(monkey.getInHands());
+    }
+
+    public void addMonkey(Monkey monkey){
+        monkeys.add(monkey);
+    }
+
+    public void doRound(int n){
+        for(int i = 0; i < n;i++){
+            doRound();
         }
+    }
+
+    public void doRound(){
+        int idx = 0;
+        for(Monkey monkey:monkeys){
+            while (monkey.hasItems()){
+                monkey.doStep();
+                int throwto = monkey.test();
+                monkeys.get(throwto).addItem(monkey.getInHands());
+                //System.out.println("Item "+monkey.getInHands()+" will be thrown from"+idx+" to "+throwto);
+            }
+            idx++;
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        int idx = 0;
+        for(Monkey monkey:monkeys){
+            stringBuilder.append("Monkey "+idx+": "+monkey.toString()+"\n");
+            idx++;
+        }
+        stringBuilder.append("----------------------");
+        return stringBuilder.toString();
     }
 }

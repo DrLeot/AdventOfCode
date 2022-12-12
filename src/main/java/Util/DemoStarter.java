@@ -4,6 +4,7 @@ import Year_2015.Day_1.DemoFloor;
 import Year_2015.Day_2.DemoPackageWrapper;
 import Year_2022.Day_1.DemoCaloriesPacker;
 import Year_2022.Day_10.SmallALUDemo;
+import Year_2022.Day_11.DemoMonkeyGame;
 import Year_2022.Day_2.DemoPaperRockScissors;
 import Year_2022.Day_3.DemoBackPack;
 import Year_2022.Day_4.DemoCampCleanup;
@@ -33,6 +34,7 @@ public class DemoStarter {
         starters.add(new DemoConsole());
         starters.add(new DemoMap());
         starters.add(new SmallALUDemo());
+        starters.add(new DemoMonkeyGame());
 
 
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
